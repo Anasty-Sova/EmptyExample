@@ -40,9 +40,6 @@ namespace EmptyExample
             this.localbdDataSet = new EmptyExample.LocalbdDataSet();
             this.localbdDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.localbdDataSet1 = new EmptyExample.LocalbdDataSet1();
-            this.examBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.examTableAdapter = new EmptyExample.LocalbdDataSet1TableAdapters.ExamTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +48,9 @@ namespace EmptyExample
             this.rowDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deskDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.disciplineDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.examBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.localbdDataSet1 = new EmptyExample.LocalbdDataSet1();
+            this.examTableAdapter = new EmptyExample.LocalbdDataSet1TableAdapters.ExamTableAdapter();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -75,8 +75,8 @@ namespace EmptyExample
             ((System.ComponentModel.ISupportInitialize)(this.localbdDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.localbdDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.localbdDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.examBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.localbdDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // dBDataSet
@@ -141,20 +141,7 @@ namespace EmptyExample
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(842, 545);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // localbdDataSet1
-            // 
-            this.localbdDataSet1.DataSetName = "LocalbdDataSet1";
-            this.localbdDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // examBindingSource
-            // 
-            this.examBindingSource.DataMember = "Exam";
-            this.examBindingSource.DataSource = this.localbdDataSet1;
-            // 
-            // examTableAdapter
-            // 
-            this.examTableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -205,12 +192,27 @@ namespace EmptyExample
             this.disciplineDataGridViewTextBoxColumn.HeaderText = "Discipline";
             this.disciplineDataGridViewTextBoxColumn.Name = "disciplineDataGridViewTextBoxColumn";
             // 
+            // examBindingSource
+            // 
+            this.examBindingSource.DataMember = "Exam";
+            this.examBindingSource.DataSource = this.localbdDataSet1;
+            // 
+            // localbdDataSet1
+            // 
+            this.localbdDataSet1.DataSetName = "LocalbdDataSet1";
+            this.localbdDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // examTableAdapter
+            // 
+            this.examTableAdapter.ClearBeforeFill = true;
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(12, 31);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -363,8 +365,8 @@ namespace EmptyExample
             ((System.ComponentModel.ISupportInitialize)(this.localbdDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.localbdDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.localbdDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.examBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.localbdDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
